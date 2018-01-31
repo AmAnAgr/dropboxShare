@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Files</title>
+</head>
+<body>
+	<form style="float: right;" action="{% url "logout" %}" method="POST">
+		{% csrf_token %}
+		<button type="submit">Logout</button>
+	</form>
+
+	<ul>
+		{% for file in entries %}
+		<li>
+			<a href="/downlaod/{{ file }}">{{ file }}</a>
+		</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>
